@@ -960,10 +960,6 @@ List quotes = [
       "from":"Mario Andretti"
    },
    {  
-      "text":"Don’t be trapped by dogma",
-      "from":"which is living with the results of other people’s thinking.”"
-   },
-   {  
       "text":"Do or do not. There is no try.",
       "from":"Yoda"
    },

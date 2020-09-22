@@ -4,6 +4,7 @@ import 'package:hexcolor/hexcolor.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:auto_animated/auto_animated.dart';
 import 'package:reverze/elements/utils.dart';
+import 'package:reverze/screens/menu-2.dart';
 
 
 class MainMenu extends StatefulWidget {
@@ -47,30 +48,31 @@ class _MainMenuState extends State<MainMenu> {
       ),
       child: Scaffold(
         backgroundColor: Colors.transparent,
-        appBar: AppBar(
-          backgroundColor: Colors.transparent,
-          title: Text('REVERZE', style: TextStyle(color: Colors.white, fontFamily: 'Lightning',),),
-          actions: <Widget>[
-            Icon(Icons.help_outline)
-          ],
-        ),
+        // appBar: AppBar(
+        //   backgroundColor: Colors.transparent,
+        //   title: Text('REVERZE', style: TextStyle(color: Colors.white, fontFamily: 'Lightning',),),
+        //   actions: <Widget>[
+        //     Icon(Icons.help_outline)
+        //   ],
+        // ),
         drawer: Drawer(),
         body: isReady==false 
         ? Align(child: spinkit, alignment: Alignment.center,) 
-        : LiveGrid(
-            padding: EdgeInsets.all(16),
-            showItemInterval: Duration(milliseconds: 50),
-            showItemDuration: Duration(milliseconds: 150),
-            visibleFraction: 0.001,
-            itemCount: itemsCount,
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 3,
-              crossAxisSpacing: 16,
-              mainAxisSpacing: 16,
-            ),
-            itemBuilder: animationItemBuilder(
-                (index) => HorizontalItem(title: index.toString())),
-          ),
+        : Menu2()
+        // : LiveGrid(
+        //     padding: EdgeInsets.all(16),
+        //     showItemInterval: Duration(milliseconds: 50),
+        //     showItemDuration: Duration(milliseconds: 150),
+        //     visibleFraction: 0.001,
+        //     itemCount: itemsCount,
+        //     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        //       crossAxisCount: 3,
+        //       crossAxisSpacing: 16,
+        //       mainAxisSpacing: 16,
+        //     ),
+        //     itemBuilder: animationItemBuilder(
+        //         (index) => HorizontalItem(title: index.toString())),
+        //   ),
       ),
     );
   }
